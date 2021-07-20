@@ -1,9 +1,9 @@
 library icon_badge;
-
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class IconBadge extends StatelessWidget {
-  final Icon icon;
+  var icon;
   final VoidCallback? onTap;
   final int itemCount;
   final bool hideZero;
@@ -13,10 +13,10 @@ class IconBadge extends StatelessWidget {
   final double right;
   final int maxCount;
 
-  const IconBadge({
+  IconBadge({
     Key? key,
     this.onTap,
-    required this.icon,
+    this.icon,
     this.itemCount = 0,
     this.hideZero = false,
     this.badgeColor = Colors.red,
@@ -33,7 +33,7 @@ class IconBadge extends StatelessWidget {
             onTap: onTap,
             child: Container(
               width: 72,
-              padding: const EdgeInsets.symmetric(horizontal: 8),
+              padding: EdgeInsets.symmetric(horizontal: 8),
               child: Stack(
                 alignment: Alignment.center,
                 children: [
@@ -51,7 +51,7 @@ class IconBadge extends StatelessWidget {
             onTap: onTap,
             child: Container(
               width: 72,
-              padding: const EdgeInsets.symmetric(horizontal: 8),
+              padding: EdgeInsets.symmetric(horizontal: 8),
               child: Stack(
                 alignment: Alignment.center,
                 children: [
